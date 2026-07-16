@@ -1,28 +1,22 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 export function ScrollProgressRail() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight - windowHeight;
-      const scrolled = window.scrollY;
-      const scrollPercent = documentHeight > 0 ? (scrolled / documentHeight) * 100 : 0;
-      setProgress(scrollPercent);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrollYProgress } = useScroll();
+  
+  // Create a smooth spring animation for scroll progress
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-1 bg-fog-200 z-40 pointer-events-none">
-      <div
-        className="w-full bg-runway-700 transition-all duration-300"
-        style={{ height: `${progress}%` }}
+    <div className="fixed left-0 top-0 h-screen w-1.5 bg-fog-200/40 z-40 pointer-events-none">
+      <motion.div
+        className="w-full h-full bg-gradient-to-b from-runway-700 via-beacon-500 to-runway-700 origin-top shadow-[0_0_8px_rgba(201,122,61,0.5)]"
+        style={{ scaleY }}
       />
     </div>
   );

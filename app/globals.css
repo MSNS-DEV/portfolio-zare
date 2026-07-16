@@ -24,11 +24,13 @@
 
 @layer base {
   html {
-    @apply bg-paper-50;
+    @apply bg-paper-50 scroll-smooth;
   }
   
   body {
-    @apply text-ink-900 bg-paper-50;
+    @apply text-ink-900 bg-paper-50 antialiased overflow-x-hidden;
+    /* Base perspective for page-level 3D effects */
+    perspective: 1500px;
   }
   
   /* Typography scaling */
@@ -51,4 +53,81 @@
   .font-mono-text {
     @apply font-mono;
   }
+}
+
+/* 3D and Animation Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Card Glassmorphism Effect */
+.card-3d-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 216, 206, 0.6);
+  transform-style: preserve-3d;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d-glass:hover {
+  border-color: rgba(46, 82, 102, 0.4);
+}
+
+/* Layered 3D Shadow Shadows */
+.shadow-3d-sm {
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.05), 
+    0 2px 2px rgba(0,0,0,0.05), 
+    0 4px 4px rgba(0,0,0,0.05), 
+    0 8px 8px rgba(0,0,0,0.05);
+}
+
+.shadow-3d-md {
+  box-shadow: 
+    0 2px 4px rgba(46, 82, 102, 0.08), 
+    0 4px 8px rgba(46, 82, 102, 0.08), 
+    0 8px 16px rgba(46, 82, 102, 0.08), 
+    0 16px 32px rgba(46, 82, 102, 0.08);
+}
+
+.shadow-3d-lg {
+  box-shadow: 
+    0 4px 6px rgba(201, 122, 61, 0.05), 
+    0 8px 16px rgba(201, 122, 61, 0.05), 
+    0 16px 32px rgba(46, 82, 102, 0.1), 
+    0 32px 64px rgba(46, 82, 102, 0.1);
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--color-beacon-500);
+  color: #FFFFFF;
+}
+
+/* Ambient glow animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float 5s ease-in-out infinite;
 }
