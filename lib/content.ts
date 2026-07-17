@@ -6,7 +6,8 @@ export const profile = {
   email: "zarwish.zare57@gmail.com",
   phone: "+447424662020",
   location: "Birmingham, UK",
-  linkedin: "https://linkedin.com/in/zarwish-bint-e-ishaq-",
+  linkedin: "https://www.linkedin.com/in/zarwish-bint-e-ishaq-0814a0142",
+  resume: "/Zarwish_Bint-e-Ishaq_Resume.pdf",
 };
 
 export const stats = [
@@ -248,5 +249,5 @@ export const contactInfo = {
   email: "zarwish.zare57@gmail.com",
   phone: "+447424662020",
   location: "Birmingham, UK",
-  linkedin: "https://linkedin.com/in/zarwish-bint-e-ishaq-",
+  linkedin: "https://www.linkedin.com/in/zarwish-bint-e-ishaq-0814a0142",
 };
