@@ -138,7 +138,7 @@ export function Hero() {
           className="mb-6 font-mono-text text-xs uppercase tracking-widest text-runway-700"
         >
           <span className="bg-runway-700/10 px-4 py-1.5 rounded-full border border-runway-700/20 inline-block shadow-3d-sm backdrop-blur-sm">
-            Role Code → HR-MGT · AVIATION · LHR
+            Role Code → QHSE · HRM · AVIATION · UK
           </span>
         </motion.div>
 
