@@ -1,7 +1,7 @@
 export const profile = {
   name: "Zarwish Bint-e-Ishaq",
   initials: "ZBI",
-  tagline: "Business Strategy & QHSE Manager | Aviation Lecturer | HR Management",
+  tagline: "Business Strategy & QHSE Manager | Aviation Lecturer | Researcher | HR Management",
   subtitle: "Business strategist and QHSE-focused HR professional with dual master's degrees in International Business (HRM) and Management, plus a BS in Aviation Management.",
   email: "zarwish.zare57@gmail.com",
   location: "Birmingham, B8 3JN, UK",
