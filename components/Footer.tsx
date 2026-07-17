@@ -88,7 +88,6 @@ export function Footer() {
               <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-beacon-500">Contact</h4>
               <div className="space-y-2 text-sm text-paper-50/70">
                 <p className="hover:text-paper-50 transition-colors duration-200">{contactInfo.location}</p>
-                <p className="hover:text-paper-50 transition-colors duration-200">{contactInfo.phone}</p>
                 <p className="hover:text-paper-50 transition-colors duration-200">{contactInfo.email}</p>
               </div>
             </div>

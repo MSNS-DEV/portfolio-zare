@@ -4,8 +4,8 @@ export const profile = {
   tagline: "Business Strategy & QHSE Manager | Aviation Lecturer | HR Management",
   subtitle: "Business strategist and QHSE-focused HR professional with dual master's degrees in International Business (HRM) and Management, plus a BS in Aviation Management.",
   email: "zarwish.zare57@gmail.com",
-  phone: "+447424662020",
   location: "Birmingham, B8 3JN, UK",
+  instagram: "https://www.instagram.com/zarwishzare",
   linkedin: "https://www.linkedin.com/in/zarwish-bint-e-ishaq-0814a0142",
   resume: "/Zarwish_Bint-e-Ishaq_Resume.pdf",
   website: "https://zarwish.pro/",
@@ -261,7 +261,9 @@ export const exposureProfile = [
 
 export const contactInfo = {
   email: "zarwish.zare57@gmail.com",
-  phone: "+447424662020",
   location: "Birmingham, B8 3JN, UK",
   linkedin: "https://www.linkedin.com/in/zarwish-bint-e-ishaq-0814a0142",
+  instagram: "https://www.instagram.com/zarwishzare",
+  fiverr: "https://www.fiverr.com/freelancer20190",
+  googleScholar: "https://scholar.google.com/citations?view_op=search_authors&mauthors=zarwish+Bint+E+Ishaq&hl=en&oi=ao",
 };
