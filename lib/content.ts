@@ -261,7 +261,7 @@ export const exposureProfile = [
 
 export const contactInfo = {
   email: "zarwish.zare57@gmail.com",
-  location: "Birmingham, B8 3JN, UK",
+  location: "Birmingham, UK",
   linkedin: "https://www.linkedin.com/in/zarwish-bint-e-ishaq-0814a0142",
   instagram: "https://www.instagram.com/zarwishzare",
   fiverr: "https://www.fiverr.com/freelancer20190",
