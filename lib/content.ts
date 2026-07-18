@@ -77,9 +77,11 @@ export const experience = [
     code: "BDP-AO",
     details: "Coordinate with Design & Print and HR departments to support daily operations. Manage QHSE compliance processes and conduct data analysis to support business reporting.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0015-O5RBokfnsn97cv5o2QKH0HNK7CDCt3.jpg",
+    documentLabel: "View Britannia Reference Letter",
     subRole: "HR Manager",
     subDetails: "Manage recruitment, onboarding, and staff HR documentation with comprehensive compliance protocols.",
     subImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
+    subDocumentLabel: "View HR Manager Credentials",
   },
   {
     role: "Exam Invigilator (Part-Time)",
@@ -89,6 +91,7 @@ export const experience = [
     code: "WBCA-EI",
     details: "Invigilate examinations for 200+ GCSE and SEN students, ensuring exam board compliance and student welfare.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAVE_20260719_023812-J3TWhW6lObkZggJOUmL3yJ8tcfZvo7.jpg",
+    documentLabel: "View Food Hygiene Certification",
   },
   {
     role: "HR Manager",
@@ -98,6 +101,7 @@ export const experience = [
     code: "CPZ-HR",
     details: "Recruited and onboarded 15 staff members and 10 drivers within a one-year period.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
+    documentLabel: "View HR Credentials",
   },
   {
     role: "Senior Lecturer – Aviation",
@@ -107,6 +111,7 @@ export const experience = [
     code: "UOS-SL",
     details: "Delivered lectures to undergraduate and MBA students across aviation and business modules. Served as Industrial Advisory Board Member and Board of Studies Member.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0052-j2Zh0To2ekUcsHvAzxthdHKnObXStj.jpg",
+    documentLabel: "View Academic discourse",
   },
   {
     role: "MUN Delegate",
@@ -116,6 +121,7 @@ export const experience = [
     code: "MUN-IST",
     details: "Selected delegate representing public awareness and peace talks; global participant for the UN Sustainable Development Goals.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
+    documentLabel: "View MUN Letter of Affirmation",
   },
   {
     role: "Aviation Operations Intern",
