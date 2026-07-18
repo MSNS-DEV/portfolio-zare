@@ -80,8 +80,6 @@ export const experience = [
     documentLabel: "View Britannia Reference Letter",
     subRole: "HR Manager",
     subDetails: "Manage recruitment, onboarding, and staff HR documentation with comprehensive compliance protocols.",
-    subImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
-    subDocumentLabel: "View HR Manager Credentials",
   },
   {
     role: "Exam Invigilator (Part-Time)",
@@ -90,8 +88,6 @@ export const experience = [
     type: "part-time",
     code: "WBCA-EI",
     details: "Invigilate examinations for 200+ GCSE and SEN students, ensuring exam board compliance and student welfare.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAVE_20260719_023812-J3TWhW6lObkZggJOUmL3yJ8tcfZvo7.jpg",
-    documentLabel: "View Food Hygiene Certification",
   },
   {
     role: "HR Manager",
@@ -100,8 +96,8 @@ export const experience = [
     type: "full-time",
     code: "CPZ-HR",
     details: "Recruited and onboarded 15 staff members and 10 drivers within a one-year period.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
-    documentLabel: "View HR Credentials",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAVE_20260719_023812-J3TWhW6lObkZggJOUmL3yJ8tcfZvo7.jpg",
+    documentLabel: "View Food Hygiene Certification",
   },
   {
     role: "Senior Lecturer – Aviation",
@@ -120,8 +116,6 @@ export const experience = [
     type: "delegate",
     code: "MUN-IST",
     details: "Selected delegate representing public awareness and peace talks; global participant for the UN Sustainable Development Goals.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260719-WA0017-9gb6dOX6tPL2WKS4xcxmfBCiHAtGH2.jpg",
-    documentLabel: "View MUN Letter of Affirmation",
   },
   {
     role: "Aviation Operations Intern",
