@@ -92,13 +92,51 @@ export function Timeline() {
 
                     {/* Details */}
                     <p 
-                      className="text-sm text-ink-900/70 mb-2 leading-relaxed"
+                      className="text-sm text-ink-900/70 mb-4 leading-relaxed"
                       style={{ transform: "translateZ(15px)" }}
                     >
                       {item.type === 'education'
                         ? item.focus
                         : item.details}
                     </p>
+
+                    {/* Image Display for Experience */}
+                    {item.type === 'experience' && (item as any).image && (
+                      <div 
+                        className="mb-4 rounded-lg overflow-hidden border border-fog-200"
+                        style={{ transform: "translateZ(12px)" }}
+                      >
+                        <img 
+                          src={(item as any).image} 
+                          alt={item.type === 'education' ? item.degree : item.role}
+                          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+
+                    {/* Sub-role section (for nested HR Manager under Admin Officer) */}
+                    {item.type === 'experience' && (item as any).subRole && (
+                      <div 
+                        className="bg-runway-700/5 rounded-lg p-3 mb-4 border border-runway-700/10"
+                        style={{ transform: "translateZ(12px)" }}
+                      >
+                        <h4 className="font-semibold text-sm text-ink-900 mb-2">
+                          {(item as any).subRole}
+                        </h4>
+                        <p className="text-xs text-ink-900/70 mb-3">
+                          {(item as any).subDetails}
+                        </p>
+                        {(item as any).subImage && (
+                          <div className="rounded-lg overflow-hidden border border-fog-200">
+                            <img 
+                              src={(item as any).subImage} 
+                              alt={(item as any).subRole}
+                              className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
 
                     {item.type === 'experience' && (
                       <div 
