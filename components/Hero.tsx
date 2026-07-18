@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { profile } from '@/lib/content';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 
 export function Hero() {
@@ -14,6 +15,7 @@ export function Hero() {
   const yBlob2 = useTransform(scrollY, [0, 800], [0, 120]);
   const yText = useTransform(scrollY, [0, 800], [0, 100]);
   const opacityText = useTransform(scrollY, [0, 600], [1, 0]);
+  const yImage = useTransform(scrollY, [0, 800], [0, 60]);
 
   // Mouse tilt values for 3D card layout
   const tiltX = useMotionValue(0);
@@ -118,99 +120,153 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <motion.div 
-        style={{ 
-          rotateX, 
-          rotateY, 
-          transformStyle: "preserve-3d",
-          y: yText,
-          opacity: opacityText
-        }}
-        variants={containerVariants} 
-        initial="hidden" 
-        animate="show"
-        className="max-w-4xl mb-12 relative z-10 mx-auto w-full"
-      >
-        {/* Eyebrow */}
+      {/* Main Hero Content — two-column layout with portrait */}
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-5 gap-12 lg:gap-16 items-center relative z-10">
+        {/* Text Content — 3 cols */}
         <motion.div 
-          variants={itemVariants} 
-          style={{ transform: "translateZ(30px)" }}
-          className="mb-6 font-mono-text text-xs uppercase tracking-widest text-runway-700"
+          style={{ 
+            rotateX, 
+            rotateY, 
+            transformStyle: "preserve-3d",
+            y: yText,
+            opacity: opacityText
+          }}
+          variants={containerVariants} 
+          initial="hidden" 
+          animate="show"
+          className="lg:col-span-3"
         >
-          <span className="bg-runway-700/10 px-4 py-1.5 rounded-full border border-runway-700/20 inline-block shadow-3d-sm backdrop-blur-sm">
-            Role Code → QHSE · HRM · AVIATION · UK
-          </span>
-        </motion.div>
-
-        {/* 3D Character reveal for name */}
-        <h1 className="text-6xl md:text-8xl font-display font-bold text-ink-900 mb-6 tracking-tight flex flex-wrap gap-x-4 select-none leading-none">
-          {profile.name.split(" ").map((word, wordIdx) => (
-            <span key={wordIdx} className="flex overflow-hidden" style={{ transform: "translateZ(60px)" }}>
-              {word.split("").map((letter, letterIdx) => {
-                const globalIdx = wordIdx * 10 + letterIdx;
-                return (
-                  <motion.span
-                    custom={globalIdx}
-                    variants={nameLetterVariants}
-                    key={letterIdx}
-                    className="inline-block"
-                  >
-                    {letter}
-                  </motion.span>
-                );
-              })}
+          {/* Eyebrow */}
+          <motion.div 
+            variants={itemVariants} 
+            style={{ transform: "translateZ(30px)" }}
+            className="mb-6 font-mono-text text-xs uppercase tracking-widest text-runway-700"
+          >
+            <span className="bg-runway-700/10 px-4 py-1.5 rounded-full border border-runway-700/20 inline-block shadow-3d-sm backdrop-blur-sm">
+              Role Code → QHSE · HRM · AVIATION · UK
             </span>
-          ))}
-        </h1>
-        
-        <motion.p 
-          variants={itemVariants} 
-          style={{ transform: "translateZ(40px)" }}
-          className="text-2xl md:text-3xl text-ink-900/80 mb-8 text-balance font-light leading-snug"
-        >
-          {profile.tagline}
-        </motion.p>
-        
-        <motion.p 
-          variants={itemVariants} 
-          style={{ transform: "translateZ(30px)" }}
-          className="text-lg text-ink-900/60 max-w-2xl mb-12 leading-relaxed"
-        >
-          {profile.subtitle}
-        </motion.p>
+          </motion.div>
 
-        {/* CTAs */}
-        <motion.div 
-          variants={itemVariants} 
-          style={{ transform: "translateZ(50px)" }}
-          className="flex gap-4 flex-wrap"
-        >
-          <Link
-            href="#contact"
-            className="group relative px-8 py-3.5 bg-beacon-500 text-white font-semibold rounded-lg overflow-hidden shadow-3d-md hover:shadow-3d-lg hover:scale-105 active:scale-95 transition-all duration-300 transform-style-3d"
+          {/* 3D Character reveal for name */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-ink-900 mb-6 tracking-tight flex flex-wrap gap-x-4 select-none leading-none">
+            {profile.name.split(" ").map((word, wordIdx) => (
+              <span key={wordIdx} className="flex overflow-hidden" style={{ transform: "translateZ(60px)" }}>
+                {word.split("").map((letter, letterIdx) => {
+                  const globalIdx = wordIdx * 10 + letterIdx;
+                  return (
+                    <motion.span
+                      custom={globalIdx}
+                      variants={nameLetterVariants}
+                      key={letterIdx}
+                      className="inline-block"
+                    >
+                      {letter}
+                    </motion.span>
+                  );
+                })}
+              </span>
+            ))}
+          </h1>
+          
+          <motion.p 
+            variants={itemVariants} 
+            style={{ transform: "translateZ(40px)" }}
+            className="text-xl md:text-2xl lg:text-3xl text-ink-900/80 mb-8 text-balance font-light leading-snug"
           >
-            <span className="relative z-10 inline-block group-hover:translate-z-[10px] transition-transform">Get In Touch</span>
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-          </Link>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 border border-runway-700 text-runway-700 font-semibold rounded-lg hover:bg-runway-700 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-3d-sm hover:shadow-3d-md inline-flex items-center gap-2"
+            {profile.tagline}
+          </motion.p>
+          
+          <motion.p 
+            variants={itemVariants} 
+            style={{ transform: "translateZ(30px)" }}
+            className="text-base md:text-lg text-ink-900/60 max-w-2xl mb-12 leading-relaxed"
           >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            LinkedIn Profile
-          </a>
-          <a
-            href={profile.resume}
-            download
-            className="px-8 py-3.5 border border-beacon-500/50 text-beacon-500 font-semibold rounded-lg hover:bg-beacon-500 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-3d-sm hover:shadow-3d-md inline-flex items-center gap-2"
+            {profile.subtitle}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div 
+            variants={itemVariants} 
+            style={{ transform: "translateZ(50px)" }}
+            className="flex gap-4 flex-wrap"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            Download Resume
-          </a>
+            <Link
+              href="#contact"
+              className="group relative px-8 py-3.5 bg-beacon-500 text-white font-semibold rounded-lg overflow-hidden shadow-3d-md hover:shadow-3d-lg hover:scale-105 active:scale-95 transition-all duration-300 transform-style-3d"
+            >
+              <span className="relative z-10 inline-block group-hover:translate-z-[10px] transition-transform">Get In Touch</span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
+            </Link>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 border border-runway-700 text-runway-700 font-semibold rounded-lg hover:bg-runway-700 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-3d-sm hover:shadow-3d-md inline-flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn Profile
+            </a>
+            <a
+              href={profile.resume}
+              download
+              className="px-8 py-3.5 border border-beacon-500/50 text-beacon-500 font-semibold rounded-lg hover:bg-beacon-500 hover:text-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-3d-sm hover:shadow-3d-md inline-flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              Download Resume
+            </a>
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* Portrait Image — 2 cols */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, x: 60 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ type: 'spring', stiffness: 60, damping: 20, delay: 0.5 }}
+          style={{ y: yImage, opacity: opacityText }}
+          className="lg:col-span-2 relative hidden lg:block"
+        >
+          <div className="relative">
+            {/* Decorative frame behind image */}
+            <div className="absolute -inset-3 rounded-2xl border-2 border-beacon-500/20 -rotate-3 scale-[1.02]" />
+            <div className="absolute -inset-3 rounded-2xl border-2 border-runway-700/15 rotate-2 scale-[0.98]" />
+            
+            {/* Main portrait */}
+            <div className="relative rounded-2xl overflow-hidden shadow-3d-lg aspect-[3/4] border-2 border-white/50">
+              <Image
+                src={profile.portrait}
+                alt={`${profile.name} — Portrait`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 0vw, 35vw"
+                priority
+              />
+              {/* Subtle gradient overlay at bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/30 via-transparent to-transparent" />
+            </div>
+            
+            {/* Floating badge */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-4 -left-4 bg-white rounded-xl px-4 py-3 shadow-3d-md border border-fog-200"
+            >
+              <p className="font-mono-text text-[10px] text-runway-700/60 uppercase tracking-widest mb-0.5">Based in</p>
+              <p className="font-display font-bold text-ink-900 text-sm">Birmingham, UK 🇬🇧</p>
+            </motion.div>
+            
+            {/* Status dot */}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-2 -right-2 bg-white rounded-full p-2 shadow-3d-sm border border-fog-200"
+            >
+              <div className="w-3 h-3 rounded-full bg-emerald-400 relative">
+                <div className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-40" />
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div 

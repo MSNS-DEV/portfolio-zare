@@ -4,6 +4,7 @@ import { skills, languages, specializations } from '@/lib/content';
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow';
 import { DotRating } from '@/components/ui/DotRating';
 import { ScrollReveal3D } from '@/components/ui/ScrollReveal3D';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -25,7 +26,7 @@ export function Capabilities() {
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow label="Capabilities" code="SKILLS" />
 
-        {/* Specializations Cards */}
+        {/* Specializations Cards — now with images */}
         <div className="grid md:grid-cols-3 gap-6 mb-20">
           {specializations.map((spec, idx) => (
             <ScrollReveal3D
@@ -35,27 +36,42 @@ export function Capabilities() {
               scale={1.03}
               className="h-full"
             >
-              <div className="bg-white border border-fog-200 rounded-xl p-6 shadow-3d-sm hover:shadow-3d-md hover:border-runway-700/30 transition-all duration-300 transform-style-3d h-full cursor-default">
-                <div 
-                  className="text-4xl mb-4"
-                  style={{ transform: "translateZ(30px)" }}
-                >
-                  {spec.icon === 'briefcase' && '💼'}
-                  {spec.icon === 'book' && '📚'}
-                  {spec.icon === 'compass' && '🧭'}
+              <div className="bg-white border border-fog-200 rounded-xl overflow-hidden shadow-3d-sm hover:shadow-3d-md hover:border-runway-700/30 transition-all duration-300 transform-style-3d h-full cursor-default group">
+                {/* Specialization image */}
+                {spec.image && (
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={spec.image}
+                      alt={spec.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div 
+                    className="text-4xl mb-4"
+                    style={{ transform: "translateZ(30px)" }}
+                  >
+                    {spec.icon === 'briefcase' && '💼'}
+                    {spec.icon === 'book' && '📚'}
+                    {spec.icon === 'compass' && '🧭'}
+                  </div>
+                  <h3 
+                    className="font-display font-bold text-xl text-ink-900 mb-3"
+                    style={{ transform: "translateZ(20px)" }}
+                  >
+                    {spec.title}
+                  </h3>
+                  <p 
+                    className="text-sm text-ink-900/60 leading-relaxed"
+                    style={{ transform: "translateZ(10px)" }}
+                  >
+                    {spec.description}
+                  </p>
                 </div>
-                <h3 
-                  className="font-display font-bold text-xl text-ink-900 mb-3"
-                  style={{ transform: "translateZ(20px)" }}
-                >
-                  {spec.title}
-                </h3>
-                <p 
-                  className="text-sm text-ink-900/60 leading-relaxed"
-                  style={{ transform: "translateZ(10px)" }}
-                >
-                  {spec.description}
-                </p>
               </div>
             </ScrollReveal3D>
           ))}

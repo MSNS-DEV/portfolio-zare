@@ -1,15 +1,37 @@
 'use client';
 
-import { achievements } from '@/lib/content';
+import { achievements, achievementImages } from '@/lib/content';
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow';
 import { ScrollReveal3D } from '@/components/ui/ScrollReveal3D';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export function Achievements() {
   return (
     <section id="achievements" className="py-20 px-6 md:px-12 bg-runway-700/5 overflow-hidden perspective-2000">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <SectionEyebrow label="Achievements" code="CERT-LIST" />
+
+        {/* Achievement showcase images */}
+        <div className="grid grid-cols-3 gap-4 mb-12">
+          {achievementImages.map((img, idx) => (
+            <ScrollReveal3D key={idx} tiltMax={8} scale={1.03} delay={idx * 0.1} direction="up">
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-3d-sm hover:shadow-3d-md transition-all duration-300 group">
+                <Image
+                  src={img.url}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 33vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <p className="absolute bottom-3 left-3 right-3 text-xs text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+                  {img.alt}
+                </p>
+              </div>
+            </ScrollReveal3D>
+          ))}
+        </div>
 
         <div className="grid md:grid-cols-2 gap-4">
           {achievements.map((achievement, idx) => (

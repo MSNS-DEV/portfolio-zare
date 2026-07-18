@@ -3,6 +3,7 @@
 import { about } from '@/lib/content';
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow';
 import { ScrollReveal3D } from '@/components/ui/ScrollReveal3D';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export function About() {
@@ -21,7 +22,7 @@ export function About() {
 
   return (
     <section id="about" className="py-20 px-6 md:px-12 overflow-hidden perspective-1000">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <SectionEyebrow label="About" code="WHY-ME" />
 
         <div className="grid md:grid-cols-3 gap-12 items-start">
@@ -69,6 +70,27 @@ export function About() {
                 </motion.ul>
               </div>
             </ScrollReveal3D>
+
+            {/* About section images — inline visual showcase */}
+            <div className="grid grid-cols-2 gap-4">
+              {about.images.map((img, idx) => (
+                <ScrollReveal3D key={idx} tiltMax={10} scale={1.03} delay={idx * 0.1}>
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-3d-sm hover:shadow-3d-md transition-all duration-300 group">
+                    <Image
+                      src={img.url}
+                      alt={img.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <p className="absolute bottom-3 left-3 right-3 text-xs text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+                      {img.alt}
+                    </p>
+                  </div>
+                </ScrollReveal3D>
+              ))}
+            </div>
           </div>
 
           {/* Side info / Specializations */}

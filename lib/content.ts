@@ -11,6 +11,8 @@ export const profile = {
   website: "https://zarwish.pro/",
   googleScholar: "https://scholar.google.com/citations?view_op=search_authors&mauthors=zarwish+Bint+E+Ishaq&hl=en&oi=ao",
   fiverr: "https://www.fiverr.com/freelancer20190",
+  // Hero portrait — single female in black
+  portrait: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0061-eBES25dvdpxtGJ0PrmyboN0TG7rqLf.jpg",
 };
 
 export const stats = [
@@ -28,6 +30,17 @@ export const about = {
     "Senior Lecturer in Aviation & Business at university level",
     "Experienced in recruitment, onboarding, and staff management",
     "MUN Delegate and active contributor to UN Sustainable Development Goals",
+  ],
+  // Images shown in the About section
+  images: [
+    {
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0059-m1rm31sezQTw5cVV8ZitWzjnsWlXSr.jpg",
+      alt: "Cultural Representation — Traditional attire at formal academic event",
+    },
+    {
+      url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0047-7u0XHS8m0NEQhtUFfCNorR6eDYESZv.jpg",
+      alt: "Workspace — Professional documentation and work environment",
+    },
   ],
 };
 
@@ -63,6 +76,7 @@ export const experience = [
     type: "full-time",
     code: "BDP-AO",
     details: "Coordinate with Design & Print and HR departments to support daily operations. Manage QHSE compliance processes and conduct data analysis to support business reporting.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0047-7u0XHS8m0NEQhtUFfCNorR6eDYESZv.jpg",
   },
   {
     role: "Exam Invigilator (Part-Time)",
@@ -79,6 +93,7 @@ export const experience = [
     type: "full-time",
     code: "CPZ-HR",
     details: "Recruited and onboarded 15 staff members and 10 drivers within a one-year period.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0045-7WhbWJ1fBMgJZXH8dtQA7vW0pwwUd9.jpg",
   },
   {
     role: "Senior Lecturer – Aviation",
@@ -87,6 +102,7 @@ export const experience = [
     type: "full-time",
     code: "UOS-SL",
     details: "Delivered lectures to undergraduate and MBA students across aviation and business modules. Served as Industrial Advisory Board Member and Board of Studies Member.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0052-j2Zh0To2ekUcsHvAzxthdHKnObXStj.jpg",
   },
   {
     role: "MUN Delegate",
@@ -95,6 +111,7 @@ export const experience = [
     type: "delegate",
     code: "MUN-IST",
     details: "Selected delegate representing public awareness and peace talks; global participant for the UN Sustainable Development Goals.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0060-3uAwzUkEpm7TaXCsFpIOdBLNXPR1HC.jpg",
   },
   {
     role: "Aviation Operations Intern",
@@ -131,16 +148,19 @@ export const specializations = [
     title: "HR & QHSE Compliance",
     description: "Strategic HR planning, QHSE certification, workplace compliance, recruitment, onboarding, and organisational development.",
     icon: "briefcase",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0044-jKkRN0BuPgJIpgbgF7eOZSwEH5nDIg.jpg",
   },
   {
     title: "Teaching & Academic Leadership",
     description: "University-level lecturing, curriculum design, student assessment, exam invigilation, and professional training delivery.",
     icon: "book",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0050-yLjg3AfcAywnAOrIYPMAK2ZsIABgzG.jpg",
   },
   {
     title: "Research & Business Strategy",
     description: "Peer-reviewed research, business strategy consulting, data analysis, and evidence-based recommendations for organisational growth.",
     icon: "compass",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0054-0nnxQonpVsC1RjyIM1NuKybj3BQuWV.jpg",
   },
 ];
 
@@ -155,6 +175,22 @@ export const achievements = [
   "DICE Competition Winner at UMT by CENTIN",
   "Participant, IYC International Youth Conference 2023",
   "Top Seller Freelancer at Upwork & Level One Seller at Fiverr with High Quality Service Badge",
+];
+
+// Achievements section showcase images
+export const achievementImages = [
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0049-chiHVqXBKqVzJsmjEmWJDYWIZLXoy8.jpg",
+    alt: "Student Leadership — Recognizing excellence with certificates of achievement",
+  },
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0055-3Pf4C9KS1c2FQY71J3ml6CfwNhvHJ2.jpg",
+    alt: "Formal Recognition — Gala event with institutional leadership",
+  },
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0048-QiPgNHpjC3RCHsaMNtWFD4KzWisp1p.jpg",
+    alt: "Award Recipient — Recognition for excellence and contribution",
+  },
 ];
 
 export const publications = [
@@ -242,6 +278,18 @@ export const researchProjects = [
   },
 ];
 
+// Research section contextual images
+export const researchImages = [
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0053-rhcwTTRHqTjBdB0THFvIoLd1qIgy0y.jpg",
+    alt: "Aviation Education — Faculty and students in aviation program",
+  },
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0051-RR0q10gYPm8iA5sEmQjbsbxNpBTB2n.jpg",
+    alt: "Aviation Team — Aviation program faculty and staff cohort",
+  },
+];
+
 export const exposureProfile = [
   { name: "Ulster University", code: "ULST" },
   { name: "West Bromwich Collegiate Academy", code: "WBCA" },
@@ -259,6 +307,30 @@ export const exposureProfile = [
   { name: "CENTIN", code: "CTN" },
 ];
 
+// Exposure section — team/networking images
+export const exposureImages = [
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0046-zU3OIGGqiA0FQvDUZCWJrZWFHn5RNe.jpg",
+    alt: "Team Collaboration — Group engagement and professional teamwork",
+  },
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0056-L6av1OezM4a5m61NZVkmcXuqTYVHFS.jpg",
+    alt: "University of Sialkot — Institutional branding and affiliation",
+  },
+];
+
+// Graduation images for footer/contact area
+export const graduationImages = [
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0057-5BjlYdq3k5h5a7AqDFme7fhmQK0QIz.jpg",
+    alt: "Graduation Moment — Academic milestone and ceremonial recognition",
+  },
+  {
+    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0058-tqRGrJuFtljD2Nojz7dO2ZSj51hUt0.jpg",
+    alt: "Academic Achievement — Graduation ceremony milestone",
+  },
+];
+
 export const contactInfo = {
   email: "zarwish.zare57@gmail.com",
   location: "Birmingham, UK",
@@ -267,150 +339,3 @@ export const contactInfo = {
   fiverr: "https://www.fiverr.com/freelancer20190",
   googleScholar: "https://scholar.google.com/citations?view_op=search_authors&mauthors=zarwish+Bint+E+Ishaq&hl=en&oi=ao",
 };
-
-export const gallery = [
-  {
-    id: 1,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0052-j2Zh0To2ekUcsHvAzxthdHKnObXStj.jpg",
-    title: "Academic Discourse",
-    description: "Leading seminar discussions and academic engagement at University of Sialkot",
-    category: "teaching",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 2,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0045-7WhbWJ1fBMgJZXH8dtQA7vW0pwwUd9.jpg",
-    title: "Professional Network",
-    description: "Building relationships with industry leaders and academic peers",
-    category: "networking",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 3,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0049-chiHVqXBKqVzJsmjEmWJDYWIZLXoy8.jpg",
-    title: "Student Leadership",
-    description: "Recognizing excellence: students receiving certificates of achievement",
-    category: "achievement",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    id: 4,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0059-m1rm31sezQTw5cVV8ZitWzjnsWlXSr.jpg",
-    title: "Cultural Representation",
-    description: "Traditional attire at formal academic event",
-    category: "personal",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 5,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0055-3Pf4C9KS1c2FQY71J3ml6CfwNhvHJ2.jpg",
-    title: "Formal Recognition",
-    description: "Gala event with institutional leadership and colleagues",
-    category: "achievement",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 6,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0046-zU3OIGGqiA0FQvDUZCWJrZWFHn5RNe.jpg",
-    title: "Team Collaboration",
-    description: "Group engagement and professional teamwork environment",
-    category: "teaching",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    id: 7,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0053-rhcwTTRHqTjBdB0THFvIoLd1qIgy0y.jpg",
-    title: "Aviation Education",
-    description: "Faculty and students in aviation program — field of expertise",
-    category: "teaching",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    id: 8,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0057-5BjlYdq3k5h5a7AqDFme7fhmQK0QIz.jpg",
-    title: "Graduation Moment",
-    description: "Academic milestone and ceremonial recognition",
-    category: "achievement",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 9,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0048-QiPgNHpjC3RCHsaMNtWFD4KzWisp1p.jpg",
-    title: "Award Recipient",
-    description: "Recognition for excellence and contribution",
-    category: "achievement",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 10,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0061-eBES25dvdpxtGJ0PrmyboN0TG7rqLf.jpg",
-    title: "Portrait",
-    description: "Professional headshot",
-    category: "personal",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 11,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0054-0nnxQonpVsC1RjyIM1NuKybj3BQuWV.jpg",
-    title: "Professional Meeting",
-    description: "Strategic planning and institutional collaboration",
-    category: "networking",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    id: 12,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0050-yLjg3AfcAywnAOrIYPMAK2ZsIABgzG.jpg",
-    title: "Lecture Hall",
-    description: "Teaching and student engagement in classroom setting",
-    category: "teaching",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 13,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0051-RR0q10gYPm8iA5sEmQjbsbxNpBTB2n.jpg",
-    title: "Aviation Team",
-    description: "Aviation program faculty and staff cohort",
-    category: "teaching",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 14,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0044-jKkRN0BuPgJIpgbgF7eOZSwEH5nDIg.jpg",
-    title: "Team Leadership",
-    description: "Leading a diverse team in professional setting",
-    category: "networking",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 15,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0060-3uAwzUkEpm7TaXCsFpIOdBLNXPR1HC.jpg",
-    title: "Ceremonial Event",
-    description: "Formal event participation and recognition",
-    category: "achievement",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 16,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0058-tqRGrJuFtljD2Nojz7dO2ZSj51hUt0.jpg",
-    title: "Academic Achievement",
-    description: "Graduation ceremony milestone",
-    category: "achievement",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 17,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0047-7u0XHS8m0NEQhtUFfCNorR6eDYESZv.jpg",
-    title: "Workspace",
-    description: "Professional documentation and work environment",
-    category: "personal",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    id: 18,
-    url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260718-WA0056-L6av1OezM4a5m61NZVkmcXuqTYVHFS.jpg",
-    title: "University Affiliation",
-    description: "University of Sialkot institutional branding",
-    category: "personal",
-    span: "col-span-1 row-span-1",
-  },
-];

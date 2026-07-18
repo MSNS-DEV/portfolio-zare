@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { contactInfo } from '@/lib/content';
+import { contactInfo, graduationImages } from '@/lib/content';
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow';
 import { ScrollReveal3D } from '@/components/ui/ScrollReveal3D';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export function Contact() {
@@ -36,6 +37,27 @@ export function Contact() {
     <section id="contact" className="py-20 px-6 md:px-12 perspective-2000 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <SectionEyebrow label="Contact" code="REACH-OUT" />
+
+        {/* Graduation / milestone images row */}
+        <div className="grid grid-cols-2 gap-4 mb-12">
+          {graduationImages.map((img, idx) => (
+            <ScrollReveal3D key={idx} tiltMax={6} scale={1.02} delay={idx * 0.1}>
+              <div className="relative rounded-xl overflow-hidden aspect-[16/9] shadow-3d-sm hover:shadow-3d-md transition-all duration-300 group">
+                <Image
+                  src={img.url}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent" />
+                <p className="absolute bottom-3 left-4 text-xs text-white/90 font-semibold">
+                  {img.alt.split('—')[0].trim()}
+                </p>
+              </div>
+            </ScrollReveal3D>
+          ))}
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}

@@ -12,7 +12,6 @@ const sections = [
   { id: 'capabilities', label: 'Skills' },
   { id: 'achievements', label: 'Achievements' },
   { id: 'research', label: 'Research' },
-  { id: 'gallery', label: 'Gallery' },
   { id: 'exposure', label: 'Network' },
   { id: 'contact', label: 'Contact' },
 ];

@@ -1,8 +1,9 @@
 'use client';
 
-import { exposureProfile } from '@/lib/content';
+import { exposureProfile, exposureImages } from '@/lib/content';
 import { SectionEyebrow } from '@/components/ui/SectionEyebrow';
 import { ScrollReveal3D } from '@/components/ui/ScrollReveal3D';
+import Image from 'next/image';
 
 export function ExposureWall() {
   return (
@@ -14,6 +15,27 @@ export function ExposureWall() {
           Trusted by and affiliated with leading organizations across education,
           aviation, research, and industry.
         </p>
+
+        {/* Network / collaboration images */}
+        <div className="grid grid-cols-2 gap-4 mb-12">
+          {exposureImages.map((img, idx) => (
+            <ScrollReveal3D key={idx} tiltMax={6} scale={1.02} delay={idx * 0.1}>
+              <div className="relative rounded-xl overflow-hidden aspect-[16/7] shadow-3d-sm hover:shadow-3d-md transition-all duration-300 group">
+                <Image
+                  src={img.url}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent" />
+                <p className="absolute bottom-3 left-4 text-xs text-white/90 font-semibold">
+                  {img.alt.split('—')[0].trim()}
+                </p>
+              </div>
+            </ScrollReveal3D>
+          ))}
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {exposureProfile.map((org, idx) => (
