@@ -15,6 +15,8 @@ export function Contact() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,12 +27,41 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/zarwish.zare57@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: formData.subject,
+          message: formData.message,
+          _template: 'table',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success === 'true' || data.success === true || response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setSubmitted(false);
+        }, 4000);
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -200,14 +231,19 @@ export function Contact() {
                   placeholder="Tell me about your project..."
                 />
               </div>
+              {error && (
+                <p className="text-red-500 text-sm font-semibold text-center" style={{ transform: "translateZ(20px)" }}>
+                  {error}
+                </p>
+              )}
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 type="submit"
-                disabled={submitted}
+                disabled={submitted || loading}
                 style={{ transform: "translateZ(30px)" }}
                 className="w-full py-3.5 bg-beacon-500 text-white font-bold rounded-lg hover:bg-beacon-500/90 disabled:bg-runway-700 shadow-3d-sm hover:shadow-3d-md hover:scale-[1.02] active:scale-95 transition-all duration-300"
               >
-                {submitted ? 'Message sent! ✓' : 'Send Message'}
+                {loading ? 'Sending...' : submitted ? 'Message sent! ✓' : 'Send Message'}
               </motion.button>
             </form>
           </ScrollReveal3D>
